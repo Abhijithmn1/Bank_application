@@ -1,0 +1,45 @@
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          ZID BANK
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+
+                          <li class="has-sub ">
+                              <a href="javascript:void(0)">Branches</a>
+                              <ul class="sub-menu">
+                                  <li><a href="https://en.wikipedia.org/wiki/Wayanad_district">Wayanad</a></li>
+                                  <li><a href="https://en.wikipedia.org/wiki/Kozhikode_district">Kozhikode</a></li>
+                                  <li><a href="https://en.wikipedia.org/wiki/Malappuram_district">Malappuram</a></li>
+                                  <li><a href="https://en.wikipedia.org/wiki/Thrissur_district">Thrissur</a></li>
+                                  <li><a href="https://en.wikipedia.org/wiki/Ernakulam_district">Ernakulam</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                      {% if user.is_authenticated %}
+                      <ul class="nav">
+                          <li class="scroll-to-section "><a class="active">...(hello {{user.username}})...</a></li>
+                          <li class="scroll-to-section "><a href="{% url 'credentials:logout' %}">LOGOUT</a>
+                      </ul>
+                      {% else %}
+                      <ul class="nav">
+                          <li class="scroll-to-section "><a href="{% url 'credentials:login' %}">LOGIN</a></li>
+                          <li class="scroll-to-section "><a href="{% url 'credentials:register' %}">REGISTER</a></li>
+                      </ul>
+                      {% endif %}
+
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
